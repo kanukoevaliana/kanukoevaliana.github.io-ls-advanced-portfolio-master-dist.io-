@@ -1,0 +1,18 @@
+.menu__list{
+    display: flex;
+    &__item{
+        margin-right: 60px;
+        &:last-child{
+            margin-right: 0;
+        }
+        &--a{
+            text-decoration: none;
+            &:hover{
+                color: $grey;
+            }
+            &:active{
+                color: #ccc;
+            }
+        }
+    }
+}

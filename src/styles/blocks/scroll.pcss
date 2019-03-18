@@ -1,0 +1,32 @@
+.scroll-down{
+    position: absolute;
+    margin-top: 60%;
+    display: flex;
+    align-content: center;
+    &:hover{
+        .scroll{
+            &:hover{
+                fill: $grey;
+            }
+            &:active{
+                fill: #ccc;
+            }
+        }
+        color: $grey;
+    }
+    &:active{
+        color: #ccc;
+        .scroll{
+            &:hover{
+                fill: $grey;
+            }
+            &:active{
+                fill: #ccc;
+            }
+        }
+    }
+    cursor: pointer;
+}
+.scroll{
+    fill: #fff;
+}
