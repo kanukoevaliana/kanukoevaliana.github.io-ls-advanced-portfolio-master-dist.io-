@@ -2,8 +2,32 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 60px;
+    @include phones{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+}
+.form__flex:last-child{
+    @include tablets{
+        margin-left: 60px;
+    }
+    @include phones{
+        margin-left: 0;
+    }
 }
 .form__user{
     width: 415px;
     max-width: 100%;
+    @include tablets{
+        width: 360px;
+    }
+}
+.form__message{
+    @include tablets{
+        min-width: 768px;
+    }
+    @include phones{
+        min-width: 100%;
+    }
 }

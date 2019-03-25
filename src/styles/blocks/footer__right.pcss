@@ -2,7 +2,13 @@
 .footer__right{
     width: 80%;
     margin: 0 auto;
+    font-weight: normal;
     padding-left: 112px;
+    @include phones{
+        width: 100%;
+        padding-left: 0;
+        margin-top: 50px;
+    }
 }
 .footer__menu{
     color: #fff;
@@ -10,18 +16,34 @@
 }
 .footer__content{
     display: flex;
+    @include phones{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.footer__content__left{
+    @include tablets{
+        display: none;
+    }
+    @include phones{
+        margin-top: 50px;
+        display: block;
+    }
 }
 .footer__links{
     margin-right: 20px;
     display: inline-block;
+    border-radius: 50%;
+    border: 1px solid $grey;
     margin-top: 30px;
+    width: 42px;
+    height: 42px;
     &:last-child{
         margin-right: 0;
     }
 }
 .footer__icon{
-    border-radius: 50%;
-    border: 1px solid $grey;
+    padding: 0 auto;
     padding: 10px;
     width: 40px;
     height: 40px;
@@ -29,4 +51,5 @@
 .footer__quote{
     margin-top: 30px;
     color: #fff;
+    font-style: italic;
 }

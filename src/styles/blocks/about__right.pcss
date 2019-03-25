@@ -3,10 +3,28 @@
     .about__right__text__name{
         line-height: 80px;
         font-size: 36px;
+        font-weight: 700;
         color: #fff;
     }
     .note{
         /* font-family: 'OpenSans-Italic'; */
         margin-top: 107px;
+        font-weight: initial;
+        font-style: italic;
+    }
+    @include tablets{
+        margin-left: 105px;
+        .note{
+            margin-top: 50px;
+        }
+    }
+    @include phones{
+        margin-left: 0;
+        margin-top: 50px;
+    }
+}
+.about__right__text__inform{
+    @include phones{
+        margin-top: 20px;
     }
 }

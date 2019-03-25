@@ -1,9 +1,31 @@
 .work__block__info{
     width: 40%;
     margin-left: 110px;
+    @include tablets{
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 60px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include phones{
+        width: 90%;
+        text-align: left;
+        line-height: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 .work__block__info--tools{
     display: flex;
+    @include tablets{
+        width: 290px;
+        display: flex;
+        justify-content: space-around;
+    }
 }
 .tools{
     background-color: #f1f5f9;
@@ -13,9 +35,11 @@
 .work__block__info--title{
     margin-top: 55px;  
     color: #000;
+    font-weight: 700;
 }
 .work__block__info--text{
     margin-top: 55px;
+    line-height: 30px;
 }
 .work__link{
     display: flex;
@@ -24,9 +48,13 @@
     color: #4b6fd7;
     fill: #4b6fd7;
     margin-top: 55px;
+    &:hover{
+        text-decoration: underline;
+    }
 }
 .link__site{
     margin-left: 20px;
+    font-weight: 700;
 }
 .work__icon{
     width: 15px;

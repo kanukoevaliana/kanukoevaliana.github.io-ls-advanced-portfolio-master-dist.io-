@@ -1,15 +1,40 @@
 .headline{
     position: absolute;
-    margin-top: 35%;
+    margin-top: 33%;
     z-index: -1;
     display: flex;
+     @include tablets{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 24%;
+    }
+    @include phones{
+        z-index: 0;
+        top: 50px;
+    }
 }
 .headline__right{
     line-height: 1em;
     font-size: 64px;
+    font-weight: 800;
+    @include tablets{
+        font-size: 42px;
+    }
+    @include phones{
+        font-size: 24px;
+    }
 }
 .headline__left{
     font-size: 24px;
+    font-weight: 600;
     color: $text-color;
     text-align: right;
+    @include tablets{
+        text-align: center;
+    }
+    @include phones{
+        font-size: 14px;
+    }
 }

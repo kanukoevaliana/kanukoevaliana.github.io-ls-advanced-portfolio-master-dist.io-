@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: column;
     width: 60%;
+    @include phones{
+        width: 100%;
+    }
 }
 .form__icon{
     margin-top: 15px;
@@ -12,17 +15,30 @@
     fill: $grey;
 }
 input{
+    font-weight: 600;
     width: 100%;
     background: none;
     border: 0;
     border-bottom: 1px solid #fff;
     padding: 20px 0 20px 40px;
+    color: #fff;
 }
 .button{
+    font-weight: 600;
     margin-top: 60px;
     background: linear-gradient(to right, #ec7e00, #f29400);
     padding: 25px 100px;
-    max-width: 350px;
+    width: 350px;
     color: #fff;
     text-transform: uppercase;
+    @include tablets{
+        z-index: 100;
+        margin-top: 60px;
+        margin-left: 250px;
+    }
+    @include phones{
+        margin-left: 0;
+        margin-top: 30px;
+        width: 100%;
+    }
 }

@@ -2,8 +2,14 @@
     width: 100%;
 }
 .train{
-    margin-top: 28%;
+    margin-top: 27%;
     z-index: 2;
+    @include tablets{
+        margin-top: 22%;
+    }
+    @include phones{
+        margin-top: 7%;
+    }
 }
 .mount{
     position: absolute;

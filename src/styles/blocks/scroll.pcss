@@ -3,30 +3,23 @@
     margin-top: 60%;
     display: flex;
     align-content: center;
+    .scroll{
+        fill: #fff;
+    }
     &:hover{
-        .scroll{
-            &:hover{
-                fill: $grey;
-            }
-            &:active{
-                fill: #ccc;
-            }
-        }
         color: $grey;
+        .scroll{
+            fill: $grey;
+        }
     }
     &:active{
         color: #ccc;
         .scroll{
-            &:hover{
-                fill: $grey;
-            }
-            &:active{
-                fill: #ccc;
+            fill: #ccc;
             }
         }
-    }
     cursor: pointer;
-}
-.scroll{
-    fill: #fff;
+    @include tablets{
+        display: none;
+    }
 }

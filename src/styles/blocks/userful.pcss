@@ -4,7 +4,10 @@
     position: relative;
     height: 100%;
     width: 100%;
-    top: -50px;
+    top: -51px;
+    @include tablets{
+        overflow: hidden;
+    }
 }
 .useful__container{
     position: relative;
@@ -12,8 +15,36 @@
     width: 100%;
     margin-left: 32%;
     padding: 5% 0 10% 0;
+    @include tablets{
+        width: 85%;
+        margin: 0 auto;
+        margin-right: 0;
+        padding: 10% 0 0 0;
+    }
+    @include phones{
+        margin: 0;
+        padding: 20% 0 0 0;
+    }
 }
 .hands{
     position: absolute;
     top: 30%;
+    @include tablets{
+        display: none;
+    }
+}
+.hands__adap{
+    display: none;
+    @include tablets{
+        display: block;
+        position: relative;
+        margin-bottom: -20%;
+        max-width: 490px;
+        .hands__image{
+            transform: rotate(-90deg);
+        }
+    }
+    @include phones{
+        margin-bottom: -25%;
+    }
 }

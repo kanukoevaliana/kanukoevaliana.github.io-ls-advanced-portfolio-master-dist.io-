@@ -26,6 +26,9 @@ html(lang="en")
                   +icon('vk','link icons')
                 a(href="https://github.com/kanukoevaliana" target="_blank").icon__links--a
                   +icon('github','link icons')
+                .header__menu-wrapp
+                  a(href="#")
+                    +icon('menu','link menu')
             .headline
               .headline__left 
                 p Личный сайт
@@ -38,7 +41,7 @@ html(lang="en")
           +image('content/train.png', 'parallax train')
         section.about-me
           .about
-            .about__content
+            .about__content.container
               .about__left
                 +image('content/user_1.jpg', 'photo about__photo')
                 .info
@@ -87,11 +90,13 @@ html(lang="en")
                               r="80" cy="100" cx="100"
                             ).skill__circle.skill__gradient
                         .skill--text #{skill}
+            .hands__adap
+              +image('content/hands_1.png','hands__image')
           .hands
             +image('content/hands.png','hands__image')
         section.works
           .work__block.container
-            h2.work__block__title Мои работы
+            h2.work__block__title.section__title Мои работы
             .work__block__content
               .work__block__slider
                 +image('content/1.jpg','work__slider--img')
@@ -117,7 +122,7 @@ html(lang="en")
                   .tools HTML
                   .tools CSS
                   .tools Javascript
-                h3.work__block__info--title Сайт школы образования
+                h2.work__block__info--title Сайт школы образования
                 .work__block__info--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .work__block__info--link
                   a(href="#").work__link
@@ -128,7 +133,7 @@ html(lang="en")
           section.comments
             .container.comments__content
               .comments__content--title
-                h2.comments__content__h2 Что обо мне говорят
+                h2.comments__content__h2.section__title Что обо мне говорят
                 .comments__content__arrow.slider__buttom
                   a(href="#")
                     +icon('arrow-down','arrow-left arrow__slider')
@@ -157,7 +162,7 @@ html(lang="en")
                             .slider__info--acc #{item[1]}
           sections.contacts
             .container.contacts__content
-              h2.contacts__h2 Связаться со мной
+              h2.contacts__h2.section__title Связаться со мной
               form.form
                 .user-inform
                   .form__flex.input__style
@@ -190,6 +195,5 @@ html(lang="en")
                     a(href="https://github.com/kanukoevaliana" target="_blank").footer__links
                       +icon('github','icons footer__icon')
                 .footer__content__left
-                  .footer__content__left
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer__quote Martin Golding
