@@ -1,7 +1,7 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -15,28 +15,28 @@ html(lang="en")
           .container.herocontent
             header.header
               .header__logo
-                a(href="#").logo ЛК
+                .logo ЛК
               .header__menu
-                .header__menu__flex
+                .header__menu-flex
                   +nav()
               .header__links.icon__link
-                a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").icon__links--a
+                a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").icon__links--mod
                   +icon('insta','link icons')
-                a(href="https://vk.com/id193708094" target="_blank").icon__links--a
+                a(href="https://vk.com/id193708094" target="_blank").icon__links--mod
                   +icon('vk','link icons')
-                a(href="https://github.com/kanukoevaliana" target="_blank").icon__links--a
+                a(href="https://github.com/kanukoevaliana" target="_blank").icon__links--mod
                   +icon('github','link icons')
                 .header__menu-wrapp
                   a(href="#")
                     +icon('menu','link menu')
             .headline
               .headline__left 
-                p Личный сайт
-                p web разработчика
+                h2.headline__left--own Личный сайт
+                h2.headline__left--own web разработчика
               .headline__right 
-                p Лиана
-                p Канукоева
-            .scroll-down Скролл
+                h2.headline__right--name Лиана
+                h2.headline__right--name Канукоева
+            a(href="#").scroll-down Скролл
                 +icon('scroll','link scroll')
           +image('content/train.png', 'parallax train')
         section.about-me
@@ -54,11 +54,11 @@ html(lang="en")
                     each i in right
                       .right__p #{i}
               .about__right
-                .about__right__text
-                  .about__right__text__hi 
+                .about__right--text
+                  .about__right--text-hi 
                     p Привет, меня зовут
-                  h2.about__right__text__name Лиана Канукоева
-                  .about__right__text__inform 
+                  h2.about__right--text_name Лиана Канукоева
+                  .about__right--text_inform 
                     p Я занимаюсь разработкой совместных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .note 
                   p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
@@ -66,111 +66,37 @@ html(lang="en")
           .container.useful__container
             .useful__text
               h2.userful__text__h2.section__title Чем я могу быть вам полезна
-              .userful__text__p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
-            //- список блочков
-            ul.skills
-              - 
-                var skills = [
-                  ['Front-end', ['HTML','CSS','javascript','Jquery и Vue,js']],
-                  ['Workflow', ['GIT','Terminal','Gulp','Webpack']],
-                ]
-              //- цикл список кругов (ul)
-              each item in skills
-                li.skills__item.skill-row
-                  h3.skills-row__title #{item[0]}
-                  ul.skills-row__list
-                    each skill in item[1]
-                      li.skills-row__item
-                        .skill
-                          svg(viewBox="0 0 200 200" preserveAspectRatio="none")
-                            circle(
-                              r="80" cy="100" cx="100"
-                            ).skill__circle
-                            circle(
-                              r="80" cy="100" cx="100"
-                            ).skill__circle.skill__gradient
-                        .skill--text #{skill}
+              .userful__text--words 
+                p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
+            #skill-components
             .hands__adap
               +image('content/hands_1.png','hands__image')
           .hands
             +image('content/hands.png','hands__image')
         section.works
           .work__block.container
-            h2.work__block__title.section__title Мои работы
-            .work__block__content
-              .work__block__slider
-                +image('content/1.jpg','work__slider--img')
-                .work__slider__content
-                  ul.work__slider__list
-                    li.work__slider__item
-                      +image("content/1.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/2.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/3.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/4.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/5.jpg","slider__item--image")
-                  .work__slider__arrow
-                    a(href="#")
-                      +icon('arrow-down','arrow__slider slider-right')
-                    a(href="#")    
-                      +icon('arrow-down','arrow__slider slider-left')
-              .work__block__info
-                .work__block__info--tools
-                  .tools HTML
-                  .tools CSS
-                  .tools Javascript
-                h2.work__block__info--title Сайт школы образования
-                .work__block__info--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .work__block__info--link
-                  a(href="#").work__link
-                    +icon('link','work__icon link')
-                    .link__site Посмотреть сайт
+            h2.work__block--title.section__title Мои работы
+            #work_components
         .join-sections
           +image('content/leaves.png','join__leaves')
           section.comments
-            .container.comments__content
-              .comments__content--title
-                h2.comments__content__h2.section__title Что обо мне говорят
-                .comments__content__arrow.slider__buttom
-                  a(href="#")
-                    +icon('arrow-down','arrow-left arrow__slider')
-                  a(href="#")
-                    +icon('arrow-down','arrow-right arrow__slider')
-              .comments__content__slider.slider
-                ul.slider__list
-                  - 
-                    var slider = [
-                      ['Ковальчук Дмитрий','Основатель Loftschool'],
-                      ['Владимир Сабанцев','Преподаватель'],
-                      ['Ковальчук Дмитрий','Основатель Loftschool'],
-                      ['Владимир Сабанцев','Преподаватель'],
-                    ]
-                  each item in slider
-                    li.slider__items
-                      .quote
-                        +icon('quote','slider__quote')
-                      .slider__items--content
-                        .slider__items--text
-                          p Значимость этих проблем настолько очевидна, что укрепление и развитие структуры требуют от нас анализа форм развития.
-                        .slider__items--person
-                          +image('content/dima.png','photo slider__image')
-                          .slider__info
-                            .slider__info--name #{item[0]}
-                            .slider__info--acc #{item[1]}
+            #comments_slider
           sections.contacts
             .container.contacts__content
               h2.contacts__h2.section__title Связаться со мной
               form.form
                 .user-inform
-                  .form__flex.input__style
-                    +icon('user','form__icon')
-                    input#name(type="text", placeholder="Введите ваше имя").form__user
-                  .form__flex.input__style
-                    +icon('envelope', 'form__icon')
-                    input#email(type="email", placeholder="Введите ваш email").form__user
+                  .flexed
+                    label Введите ваше имя
+                    .form__flex.input__style
+                      +icon('user','form__icon')
+                      input#name(type="text", placeholder="Введите ваше имя").form__user
+                  .flexed
+                    label Введите ваш eamil
+                    .form__flex.input__style
+                      +icon('envelope', 'form__icon')
+                      input#email(type="email", placeholder="Введите ваш email").form__user
+                label Сообщение к письму
                 .form__mes.input__style
                   +icon('message','form__icon')
                   input#message(type="text", placeholder="Сообщение к письму").form__message
@@ -185,7 +111,7 @@ html(lang="en")
               .footer__menu
                 +nav()
               .footer__content
-                .footer__content__right 
+                .footer__content--right 
                   p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                   .footer__icons.icon__link
                     a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").footer__links
@@ -194,6 +120,7 @@ html(lang="en")
                       +icon('vk','icons footer__icon')
                     a(href="https://github.com/kanukoevaliana" target="_blank").footer__links
                       +icon('github','icons footer__icon')
-                .footer__content__left
+                .footer__content--left
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer__quote Martin Golding
+    include ./templates/entry.pug

@@ -4,7 +4,7 @@ mixin icon(name, className)
     use(xlink:href=icon.url)
 
 mixin image(path, className)
-  img(src=require(`images/${path}`) class=className role="presentation")
+  img(src=require(`images/${path}`) alt="" class=className role="presentation")
 
 mixin nav()
   - var links = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']

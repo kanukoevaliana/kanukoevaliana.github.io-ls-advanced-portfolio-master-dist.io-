@@ -26,11 +26,17 @@ input{
 .button{
     font-weight: 600;
     margin-top: 60px;
-    background: linear-gradient(to right, #ec7e00, #f29400);
+    background: linear-gradient(to right, #ec7e00, #e0a809);
     padding: 25px 100px;
     width: 350px;
     color: #fff;
     text-transform: uppercase;
+    &:hover{
+        background: #e0a809;
+    }
+    &:active{
+        background: #ec7e00;
+    }
     @include tablets{
         z-index: 100;
         margin-top: 60px;

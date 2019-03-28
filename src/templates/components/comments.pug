@@ -1,0 +1,34 @@
+script(type="text/x-template")#content
+    .container.comments__content
+        .slider_container
+            slider_title
+            slider
+
+script(type="text/x-template")#title
+    .comments__content--title
+        h2.comments__content-h2.section__title Что обо мне говорят
+        .comments__content--arrow
+            button.slider__arrows(@click.prevent="")
+                +icon('arrow-down','arrow-left arrow__slider')
+            button.slider__arrows(@click.prevent="")
+                +icon('arrow-down','arrow-right arrow__slider')
+
+script(type="text/x-template")#comments__content
+    .comments__content--slider.slider
+        ul.slider__list
+            li.slider__items(v-for="slide in slider__info" :key="slide.text")
+                .quote
+                    +icon('quote','slider__quote')
+                slider_items(
+                    :slide="slide"
+                )
+
+script(type="text/x-template")#slider__items
+    .slider__items--content
+        .slider__items--text
+            p {{slide.text}}
+            .slider__items--person
+                img(:src="slide.image" alt="").photo.slider__image
+                .slider__info
+                    .slider__info--name {{slide.name}}
+                    .slider__info--acc {{slide.acc}}
