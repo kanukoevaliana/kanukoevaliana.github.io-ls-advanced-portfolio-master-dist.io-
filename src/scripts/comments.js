@@ -7,13 +7,24 @@ const slider_items = {
     props:{
         slide: Object
     }
-}
+};
 
 
 const slider = {
     template : "#comments__content",
     components : {
         slider_items
+    },
+    data(){
+        return{
+            slider__info : {},
+            sliderIndex: 0
+        }
+    },
+    computed: {
+        commentsSlider(){
+            return this.slider__info[this.sliderIndex];
+        }
     },
     methods:{
         this_slider(data){
@@ -22,12 +33,17 @@ const slider = {
                 slide_item.image = requireImg;
 
                 return slide_item;
-            })
-        } 
-    },
-    data(){
-        return{
-            slider__info : {}
+            });
+        },
+        sliderComments(direction){
+            switch(direction){
+                case 'next':
+                    this.sliderIndex++;
+                    breake;
+                case 'prev':
+                    this.sliderIndex--;
+                    breake;
+            }
         }
     },
     created(){
@@ -71,12 +87,18 @@ const slider = {
         ]
         this.slider__info = this.this_slider(data);
     }
-}
+};
 
+const btns = {
+    template: "#btns"
+}
 
 const slider_title = {
-    template : "#title"
-}
+    template : "#title",
+    components : {
+        btns
+    }
+};
 
 
 new Vue({
@@ -86,4 +108,4 @@ new Vue({
         slider_title,
         slider
     }
-})
+});

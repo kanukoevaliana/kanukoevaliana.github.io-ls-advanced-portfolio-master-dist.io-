@@ -1,4 +1,4 @@
-.work__block--info{
+.work__info{
     width: 40%;
     margin-left: 110px;
     @include tablets{
@@ -19,7 +19,7 @@
         align-items: flex-start;
     }
 }
-.work__block--tools{
+.work__tools{
     display: flex;
     @include tablets{
         width: 290px;
@@ -28,16 +28,21 @@
     }
 }
 .tools{
+    margin-left: 20px;
+    &:first-child{
+        margin-left: 0;
+    }
     background-color: #f1f5f9;
     border-radius: 30px;
     padding: 10px 20px 10px 20px;
 }
-.work__block--title{
+.work__two-title{
     margin-top: 55px;  
     color: #000;
     font-weight: 700;
+    font-size: 30px;
 }
-.work__block--text{
+.work__text{
     margin-top: 55px;
     line-height: 30px;
 }
@@ -52,7 +57,7 @@
         text-decoration: underline;
     }
 }
-.link__site{
+.site{
     margin-left: 20px;
     font-weight: 700;
 }

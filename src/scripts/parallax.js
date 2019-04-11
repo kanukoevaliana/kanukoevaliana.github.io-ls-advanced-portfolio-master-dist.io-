@@ -1,25 +1,29 @@
 import { functionDeclaration } from "babel-types";
 
-// var parallax = function(){
-    var mount = document.querySelector('.mount'),
-    user = document.querySelector('.headline'),
-    scroll_i = document.querySelector('.scroll-down');
+    const parallax = document.querySelector('.parallax'),
+    mod_1 = document.querySelector('.mod-1'),
+    mod_2 = document.querySelector('.mod-2'),
+    mod_3 = document.querySelector('.mod-3'),
+    mod_4 = document.querySelector('.mod-4')
     
     function move(block, windowScroll, percent){
-        var plx = windowScroll / percent + '%';
-        var process = 'translate3d(0,'+plx+',0)';
-        var style = block.style;
+        const plx = windowScroll / percent + '%';
+        const process = 'translate3d(0,-'+plx+',0)';
+        const style = block.style;
         style.transform = process;
         style.webkitTransform = process;
-    };
-    function init (wScroll){
-        move(mount, wScroll, 30);
-        move(user, wScroll, 15);
-        move(scroll_i, wScroll, 5);
         
+    }
+    function init (wScroll){
+
+        move(mod_1, wScroll, 50);
+        move(mod_2, wScroll, 70);
+        move(mod_3, wScroll, 80);
+        move(mod_4, wScroll, 85);
+
     }
 
 window.addEventListener('scroll', e => {
     var wScroll = window.pageYOffset;
     init(wScroll);
-})
+});

@@ -1,4 +1,4 @@
-.comments__content--slider{
+.comments__slider{
     margin: 0 auto;
     margin-top: 110px;
     @include phones{
@@ -16,7 +16,7 @@
     overflow: hidden;
     display: flex;
     white-space: norwrap;
-}
-.slider__items{
-    max-width: 100%;
+    @include tablets{
+        width: 100%;
+    }
 }

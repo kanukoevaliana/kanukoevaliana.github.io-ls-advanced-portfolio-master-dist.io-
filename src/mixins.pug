@@ -3,13 +3,39 @@ mixin icon(name, className)
   svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
     use(xlink:href=icon.url)
 
-mixin image(path, className)
-  img(src=require(`images/${path}`) alt="" class=className role="presentation")
+mixin image(path, className, altName)
+  img(src=require(`images/${path}`) alt=altName class=className)
 
 mixin nav()
-  - var links = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
+  - 
+    var links = [
+      {
+         href:"hero", 
+         text:"Главная"
+      },
+      {
+        href:"about",
+        text:"Обо мне"
+      },
+      {
+        href:"userful", 
+        text:"Навыки"
+      },
+      {
+        href:"works", 
+        text:"Работы"
+      },
+      {
+        href:"comments", 
+        text:"Отзывы"
+      },
+      {
+        href:"contacts", 
+        text:'Связаться'
+      },
+    ]
   nav.menu
     ul.menu__list
-      each i in links
-        li.menu__list__item
-          a(href="#").menu__list__item--a=i
+      each item in links
+        li.menu__item
+          a(href=`#${item.href}`).menu__link=item.text

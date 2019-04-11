@@ -17,7 +17,7 @@ const skill = {
     mounted(){
         this.userful();
     }
-}
+};
 
 const skills_container = {
     template: "#skills-container",
@@ -27,7 +27,7 @@ const skills_container = {
     props: {
         skill: Object
     }
-}
+};
 
 new Vue({
     el: "#skill-components",
@@ -63,4 +63,4 @@ new Vue({
         ]
         this.skills = data;
     }
-})
+});

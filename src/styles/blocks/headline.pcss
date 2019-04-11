@@ -1,7 +1,7 @@
 .headline{
-    position: absolute;
-    margin-top: 32%;
-    z-index: -1;
+    // position: absolute;
+    margin-top: 13%;
+    z-index: 1;
     display: flex;
     align-items: center;
      @include tablets{
@@ -9,14 +9,24 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 24%;
+        margin-top: 10%;
     }
     @include phones{
         z-index: 0;
         top: 50px;
     }
 }
-.headline__right--name{
+.headline__left{
+    @include tablets{
+        margin-bottom: 30px;
+        line-height: 40px;
+    }
+    @include phones{
+        margin-bottom: 0px;
+        line-height: 30px;
+    }
+}
+.headline__name{
     line-height: 1em;
     font-weight: 800;
     font-size: 64px;
@@ -25,13 +35,13 @@
         font-size: 42px;
     }
     @include phones{
-        font-size: 24px;
+        font-size: 42px;
     }
 }
-.headline__left--own{
+.headline__own{
     font-size: 24px;
     font-weight: 600;
-    color: $text-color;
+    color: #ccc;
     text-align: right;
     @include tablets{
         text-align: center;

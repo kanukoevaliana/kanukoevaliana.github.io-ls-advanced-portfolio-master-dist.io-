@@ -1,5 +1,5 @@
 .header{
-    width:100%;
+    width: 100%;
     font-family: 'Open Sans' Bold;
     padding-top: 68px;
     position: relative;
@@ -20,14 +20,17 @@
 }
 .header__links{
     display: flex;
-    .icon__links--mod{
+    .links__mod{
         @include phones{
             display: none;
         }
     }
 }
-.header__menu-wrapp{
+.header__wrapp{
     display: none;
+    .butsub{
+        background: none;
+    }
     @include tablets{
         display: block;
         .menu{

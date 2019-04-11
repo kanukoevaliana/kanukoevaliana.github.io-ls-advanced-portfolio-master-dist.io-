@@ -1,21 +1,21 @@
-.work__block--slider{
+.work__slider{
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     @include tablets{
-        max-width: 90%;
+        width: 90%;
     }
     @include phones{
         min-width: 100%;
     }
 }
-.work__slider--content{
+.work__slider-content{
     display: flex;
     margin-right: -62px;
     margin-top: -110px;
 }
-.work__slider--list{
+.work__list{
     max-width: 530px;
     display: flex;
     white-space: nowrap;
@@ -24,15 +24,15 @@
         display: none;
     }
 }
-.work__slider--item{
+.work__item{
     min-width: 177px;
     display: inline-block;
     &:hover{
         border: 3px solid $base;
     }
 }
-.work__slider--arrow{
-    .work__slider--but{
+.work__arrow{
+    .work__but{
         background-color: #2d3c4e;
     }
     display: flex;
@@ -43,7 +43,7 @@
         margin-top: -18%;
     }
 }
-.arrow__slider{
+.arrow-slider{
     padding: 20px;
     width: 50px;
     height: 50px;

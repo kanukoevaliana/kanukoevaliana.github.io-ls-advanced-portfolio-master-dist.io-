@@ -19,13 +19,13 @@ script(type="text/x-template")#skill
     .skill
         .svg-skill
             svg(viewBox="0 0 200 200" preserveAspectRatio="none")
+                linearGradient(id="linearColors" x1="0" y1="0" x2="1" y2="0")
+                    stop(offset="0%" stop-color="#ec7e00")
+                    stop(offset="100%" stop-color="#ffbc00")
                 circle(
                     r="80" cy="100" cx="100"
                 ).skill__circle
                 circle(
-                    r="80" cy="100" cx="100" fill="url(#gradient)" ref="percent"
-                ).skill__circle.skill__gradient
-                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-                    stop(offset="0%" stop-color="#ec7e00")
-                    stop(offset="100%" stop-color="#f29400")
+                    r="80" cy="100" cx="100" stroke="url(#linearColors)" fill="none" ref="percent"
+                ).skill__gradient
         .skill--text {{skillName}}

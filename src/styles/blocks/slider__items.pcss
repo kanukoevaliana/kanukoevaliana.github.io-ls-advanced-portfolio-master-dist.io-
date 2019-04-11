@@ -4,6 +4,20 @@
     max-width: 210px;
     display: inline-block;
     display: flex;
+    @include tablets{
+        overflow: hidden;
+    }
+    @include phones{
+        min-width: 100%;
+    }
+}
+.items-container{
+    display: flex;
+    @include phones{
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 .slider__quote{
     height: 60px;
@@ -13,17 +27,17 @@
         height: 26px;
     }
 }
-.slider__items--content{
+.slider__content{
     width: 60%;
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    justify-content: space-between;
     @include tablets{
-        width: 335px;
+        min-width: 335px;
     }
 }
-.slider__items--person{
+.slider__person{
     display: flex;
     align-items: center;
     padding-top: 30px;
@@ -31,7 +45,7 @@
 .slider__info{
     margin-left: 30px;
 }
-.slider__info--name{
+.slider__name{
     font-weight: 700;
     color: #fff;
 }

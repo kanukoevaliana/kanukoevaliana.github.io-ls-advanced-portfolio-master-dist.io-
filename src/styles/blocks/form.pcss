@@ -3,8 +3,14 @@
     display: flex;
     flex-direction: column;
     width: 60%;
-    @include phones{
+    @include tablets{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include phones{
+        min-width: 100%;
     }
 }
 .form__icon{
@@ -16,12 +22,17 @@
 }
 input{
     font-weight: 600;
-    width: 100%;
     background: none;
     border: 0;
     border-bottom: 1px solid #fff;
     padding: 20px 0 20px 40px;
     color: #fff;
+    &:hover{
+        cursor: pointer;
+    }
+    &::-webkit-input-placeholder{
+        color: #fff;
+    }
 }
 .button{
     font-weight: 600;
@@ -40,11 +51,11 @@ input{
     @include tablets{
         z-index: 100;
         margin-top: 60px;
-        margin-left: 250px;
     }
     @include phones{
+        max-width: 415px;
+        width: 100%;
         margin-left: 0;
         margin-top: 30px;
-        width: 100%;
     }
 }
