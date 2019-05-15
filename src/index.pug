@@ -1,7 +1,7 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -10,165 +10,117 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        section.hero
-          +image('content/mount.png', 'parallax mount')
+        section.hero#hero
+          .parallax.mod-1
+            img(src=require(`images/content/1.png`) alt="слои параллакса" role="presentaition").parallax__img
+          .parallax.mod-2
+            img(src=require(`images/content/2.png`) alt="слои параллакса" role="presentaition").parallax__img
+          .parallax.mod-3
+            img(src=require(`images/content/3.png`) alt="слои параллакса" role="presentaition").parallax__img
+          .parallax.mod-4
+            img(src=require(`images/content/4.png`) alt="слои параллакса" role="presentaition").parallax__img
+          .parallax.mod-5
+            img(src=require(`images/content/5.png`) alt="слои параллакса" role="presentaition").parallax__img
           .container.herocontent
             header.header
               .header__logo
-                a(href="#").logo ЛК
+                .logo ЛК
               .header__menu
-                .header__menu__flex
-                  +nav()
-              .header__links.icon__link
-                a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").icon__links--a
+                +nav()
+              .header__links.links
+                a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").links__mod
                   +icon('insta','link icons')
-                a(href="https://vk.com/id193708094" target="_blank").icon__links--a
+                a(href="https://vk.com/id193708094" target="_blank").links__mod
                   +icon('vk','link icons')
-                a(href="https://github.com/kanukoevaliana" target="_blank").icon__links--a
+                a(href="https://github.com/kanukoevaliana" target="_blank").links__mod
                   +icon('github','link icons')
+                .header__wrapp
+                  button(type="submit").butsub
+                    +icon('menu','link menu')
+                .menu-widget#menu-widget
+                  .menu-widget__close
+                    button(type="submit").butclose
+                      +icon('close','link close')
+                  .menu-widget__wrapper
+                    .menu-widget__catalog
+                      +nav()
+                    .menu-widget__links.links
+                      a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").links__mod
+                        +icon('insta','link icons')
+                      a(href="https://vk.com/id193708094" target="_blank").links__mod
+                        +icon('vk','link icons')
+                      a(href="https://github.com/kanukoevaliana" target="_blank").links__mod
+                        +icon('github','link icons')
             .headline
               .headline__left 
-                p Личный сайт
-                p web разработчика
+                h2.headline__own Личный сайт
+                h2.headline__own web разработчика
               .headline__right 
-                p Лиана
-                p Канукоева
-            .scroll-down Скролл
+                h2.headline__name Лиана
+                h2.headline__name Канукоева
+            a(href="#about").scroll-down Скролл
                 +icon('scroll','link scroll')
-          +image('content/train.png', 'parallax train')
-        section.about-me
+        section.about-me#about
           .about
-            .about__content
+            .container.about__content
               .about__left
-                +image('content/user_1.jpg', 'photo about__photo')
+                +image('content/user_1.jpg', 'photo about__photo', "моя фотография")
                 .info
                   -var left = ['Проживаю: ','Возраст: ', 'Родилась: ']
                   .left
                     each i in left
-                      .left__h #{i}
+                      .left__name #{i}
                   -var right = ['Щелково','18 лет','13 августа 2000']
                   .right
                     each i in right
-                      .right__p #{i}
+                      .right__inf #{i}
               .about__right
-                .about__right__text
-                  .about__right__text__hi 
-                    p Привет, меня зовут
-                  h2.about__right__text__name Лиана Канукоева
-                  .about__right__text__inform 
+                .about__text
+                  .about__hi 
+                    .hellow Привет, меня зовут
+                  h2.about__name Лиана Канукоева
+                  .about__inform 
                     p Я занимаюсь разработкой совместных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .note 
-                  p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
-        section.useful
+                .about__remark Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
+        section.useful#userful
           .container.useful__container
             .useful__text
-              h2.userful__text__h2.section__title Чем я могу быть вам полезна
-              .userful__text__p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
-            //- список блочков
-            ul.skills
-              - 
-                var skills = [
-                  ['Front-end', ['HTML','CSS','javascript','Jquery и Vue,js']],
-                  ['Workflow', ['GIT','Terminal','Gulp','Webpack']],
-                ]
-              //- цикл список кругов (ul)
-              each item in skills
-                li.skills__item.skill-row
-                  h3.skills-row__title #{item[0]}
-                  ul.skills-row__list
-                    each skill in item[1]
-                      li.skills-row__item
-                        .skill
-                          svg(viewBox="0 0 200 200" preserveAspectRatio="none")
-                            circle(
-                              r="80" cy="100" cx="100"
-                            ).skill__circle
-                            circle(
-                              r="80" cy="100" cx="100"
-                            ).skill__circle.skill__gradient
-                        .skill--text #{skill}
+              h2.userful__title.section__title Чем я могу быть вам полезна
+              .userful__words
+                p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
+            #skill-components
+            .hands__adap
+              +image('content/hands_1.png','hands__image',"руки на клавиатуре")
           .hands
-            +image('content/hands.png','hands__image')
-        section.works
+            +image('content/hands.png','hands__image', "руки на клавиатуре")
+        section.works#works
           .work__block.container
-            h2.work__block__title Мои работы
-            .work__block__content
-              .work__block__slider
-                +image('content/1.jpg','work__slider--img')
-                .work__slider__content
-                  ul.work__slider__list
-                    li.work__slider__item
-                      +image("content/1.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/2.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/3.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/4.jpg","slider__item--image")
-                    li.work__slider__item
-                      +image("content/5.jpg","slider__item--image")
-                  .work__slider__arrow
-                    a(href="#")
-                      +icon('arrow-down','arrow__slider slider-right')
-                    a(href="#")    
-                      +icon('arrow-down','arrow__slider slider-left')
-              .work__block__info
-                .work__block__info--tools
-                  .tools HTML
-                  .tools CSS
-                  .tools Javascript
-                h3.work__block__info--title Сайт школы образования
-                .work__block__info--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .work__block__info--link
-                  a(href="#").work__link
-                    +icon('link','work__icon link')
-                    .link__site Посмотреть сайт
+            h2.section__title.work__title Мои работы
+            #work_components
         .join-sections
-          +image('content/leaves.png','join__leaves')
-          section.comments
-            .container.comments__content
-              .comments__content--title
-                h2.comments__content__h2 Что обо мне говорят
-                .comments__content__arrow.slider__buttom
-                  a(href="#")
-                    +icon('arrow-down','arrow-left arrow__slider')
-                  a(href="#")
-                    +icon('arrow-down','arrow-right arrow__slider')
-              .comments__content__slider.slider
-                ul.slider__list
-                  - 
-                    var slider = [
-                      ['Ковальчук Дмитрий','Основатель Loftschool'],
-                      ['Владимир Сабанцев','Преподаватель'],
-                      ['Ковальчук Дмитрий','Основатель Loftschool'],
-                      ['Владимир Сабанцев','Преподаватель'],
-                    ]
-                  each item in slider
-                    li.slider__items
-                      .quote
-                        +icon('quote','slider__quote')
-                      .slider__items--content
-                        .slider__items--text
-                          p Значимость этих проблем настолько очевидна, что укрепление и развитие структуры требуют от нас анализа форм развития.
-                        .slider__items--person
-                          +image('content/dima.png','photo slider__image')
-                          .slider__info
-                            .slider__info--name #{item[0]}
-                            .slider__info--acc #{item[1]}
-          sections.contacts
+          +image('content/leaves.png','join__leaves', "листья")
+          section.comments#comments
+            #comments_slider
+          sections.contacts#contacts
             .container.contacts__content
-              h2.contacts__h2 Связаться со мной
+              h2.contacts__title.section__title Связаться со мной
               form.form
                 .user-inform
-                  .form__flex.input__style
-                    +icon('user','form__icon')
-                    input#name(type="text", placeholder="Введите ваше имя").form__user
-                  .form__flex.input__style
-                    +icon('envelope', 'form__icon')
-                    input#email(type="email", placeholder="Введите ваш email").form__user
-                .form__mes.input__style
-                  +icon('message','form__icon')
-                  input#message(type="text", placeholder="Сообщение к письму").form__message
+                  .flexed
+                    label Введите ваше имя
+                    .form__flex.input-style
+                      +icon('user','form__icon')
+                      input#name(type="text", placeholder="Ковальчук Дмитрий").form__user
+                  .flexed
+                    label Введите ваш eamil
+                    .form__flex.input-style
+                      +icon('envelope', 'form__icon')
+                      input#email(type="email", placeholder="losfyschool@study.com").form__user
+                .form__mes.input-style
+                  label Сообщение к письму
+                  .form__flex.input-style
+                    +icon('message','form__icon')
+                    input#message(type="text", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__message
                 button.button(type="submit")#button отправить
         footer.footer
           .container.footer__container
@@ -180,16 +132,16 @@ html(lang="en")
               .footer__menu
                 +nav()
               .footer__content
-                .footer__content__right 
+                .content__right 
                   p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
-                  .footer__icons.icon__link
+                  .footer__icons.links
                     a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").footer__links
                       +icon('insta','icons footer__icon')
                     a(href="https://vk.com/id193708094" target="_blank").footer__links
                       +icon('vk','icons footer__icon')
                     a(href="https://github.com/kanukoevaliana" target="_blank").footer__links
                       +icon('github','icons footer__icon')
-                .footer__content__left
-                  .footer__content__left
+                .content__left
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer__quote Martin Golding
+    include ./templates/entry.pug

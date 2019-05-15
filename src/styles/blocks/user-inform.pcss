@@ -1,9 +1,40 @@
 .user-inform{
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding-bottom: 60px;
+    @include phones{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+}
+label{
+    margin-left: 40px;
+}
+.flexed{
+    &:last-child{
+        margin-left: 50px;
+        @include tablets{
+        }
+        @include phones{
+            margin-top: 30px;
+            margin-left: 0;
+        }
+    }
 }
 .form__user{
     width: 415px;
     max-width: 100%;
+}
+.form__mes{
+    margin-top: 30px;
+}
+.form__message{
+    min-width: 100%;
+    @include tablets{
+        min-width: 890px;
+    }
+    @include phones{
+        min-width: 415px;
+    }
 }

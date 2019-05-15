@@ -1,0 +1,51 @@
+.menu-widget{
+    top: 0;
+    display: none;
+    width: 0;
+    height: 0;
+    background-color: #1b1f22;
+    position: absolute;
+    z-index: 10;
+}
+.menu-widget__close{
+    margin-top: 70px;
+    margin-left: 30px;
+    .butclose{
+        border: none;
+        background: none;
+    }
+    .close{
+        fill: #ccc;
+        &:hover{
+            fill: $grey;
+        }
+        &:active{
+            fill: $text-color;
+        }
+    }
+}
+.menu-widget__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25%;
+}
+.menu-widget__catalog{
+    .menu__list{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        .menu__item{
+            margin-right: 0px;
+        }
+    }
+}
+.menu-widget__links{
+    display: flex;
+    margin-top: 20px;
+    .links__mod{
+        @include phones{
+            display: block;
+        }
+    }
+}

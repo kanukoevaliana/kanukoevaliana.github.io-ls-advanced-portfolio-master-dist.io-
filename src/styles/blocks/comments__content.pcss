@@ -1,12 +1,28 @@
 .comments__content{
     position: relative;
-    height: 100vh;
+    max-height: 100vh;
+    @include phones{
+        width: 100%;
+    }
 }
-.comments__content--title{
+.comments__title{
     color: #fff;
     display: flex;
     padding-top: 160px;
+    @include phones{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
 }
-.comments__content__arrow{
+.comments__arrows{
     margin-left: 100px;
+    @include phones{
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+}
+.slider__arrow{
+    background: none;
 }

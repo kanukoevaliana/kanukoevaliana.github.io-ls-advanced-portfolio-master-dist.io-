@@ -1,15 +1,52 @@
 .headline{
-    position: absolute;
-    margin-top: 35%;
-    z-index: -1;
+    // position: absolute;
+    margin-top: 13%;
+    z-index: 1;
     display: flex;
-}
-.headline__right{
-    line-height: 1em;
-    font-size: 64px;
+    align-items: center;
+     @include tablets{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 10%;
+    }
+    @include phones{
+        z-index: 0;
+        top: 50px;
+    }
 }
 .headline__left{
+    @include tablets{
+        margin-bottom: 30px;
+        line-height: 40px;
+    }
+    @include phones{
+        margin-bottom: 0px;
+        line-height: 30px;
+    }
+}
+.headline__name{
+    line-height: 1em;
+    font-weight: 800;
+    font-size: 64px;
+    margin-left: 20px;
+    @include tablets{
+        font-size: 42px;
+    }
+    @include phones{
+        font-size: 42px;
+    }
+}
+.headline__own{
     font-size: 24px;
-    color: $text-color;
+    font-weight: 600;
+    color: #ccc;
     text-align: right;
+    @include tablets{
+        text-align: center;
+    }
+    @include phones{
+        font-size: 14px;
+    }
 }

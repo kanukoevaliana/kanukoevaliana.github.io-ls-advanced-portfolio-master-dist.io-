@@ -1,13 +1,42 @@
 .section__title{
-    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
 }
 .useful__text{
-    margin-left: -70px;
+    margin-left: -10%;
+    @include tablets{
+        margin-left: 0;
+        text-align: center;
+    }
+    @include phones{
+        margin-left: 0px;
+        text-align: left;
+    }
 }
-.userful__text__p{
+.userful__words{
     margin-top: 60px;
     width: 40%;
+    line-height: 30px;
+    @include tablets{
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    @include phones{
+        width: 90%;
+        margin-top: 30px;
+        line-height: 30px;
+    }
+}
+.userful__title{
+    color: #fff;
+    @include phones{
+        margin-left: 15px;
+    }
 }
 .skills-row__title{
+    font-weight: 700;
     color: #fff;
+    @include phones{
+    }
 }

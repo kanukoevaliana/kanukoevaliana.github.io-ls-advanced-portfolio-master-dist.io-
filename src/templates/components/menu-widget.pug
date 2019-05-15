@@ -1,0 +1,16 @@
+script(type="text/x-template")#menu-widget
+    .menu-widget
+        .menu-widget__maincontent
+            .menu-widget__close
+                button(type="submit").butclose
+                    +icon('close','link close')
+            .menu-widget__wrapper
+                .menu-widget__catalog
+                    +nav()
+                .menu-widget__links.links
+                    a(href="https://www.instagram.com/liana_kanukoeva/" target="_blank").links__mod
+                    +icon('insta','link icons')
+                    a(href="https://vk.com/id193708094" target="_blank").links__mod
+                    +icon('vk','link icons')
+                    a(href="https://github.com/kanukoevaliana" target="_blank").links__mod
+                    +icon('github','link icons')

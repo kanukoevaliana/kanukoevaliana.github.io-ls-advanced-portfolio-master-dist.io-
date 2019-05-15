@@ -1,0 +1,31 @@
+script(type="text/x-template")#skills
+    ul.skills
+        li.skills__item.skill-row(v-for="skill in skills" :key="skill.title")
+            skills_container(
+                :skill="skill"
+            )
+
+script(type="text/x-template")#skills-container
+    .skills-container
+        h3.skills-row__title {{skill.title}}
+        ul.skills-row__list
+            li.skills-row__item(v-for="(skillValue, skillName) in skill.skills")
+                skill(
+                    :skillName="skillName"
+                    :skillValue="skillValue"
+                )
+
+script(type="text/x-template")#skill
+    .skill
+        .svg-skill
+            svg(viewBox="0 0 200 200" preserveAspectRatio="none")
+                linearGradient(id="linearColors" x1="0" y1="0" x2="1" y2="0")
+                    stop(offset="0%" stop-color="#ec7e00")
+                    stop(offset="100%" stop-color="#ffbc00")
+                circle(
+                    r="80" cy="100" cx="100"
+                ).skill__circle
+                circle(
+                    r="80" cy="100" cx="100" stroke="url(#linearColors)" fill="none" ref="percent"
+                ).skill__gradient
+        .skill--text {{skillName}}

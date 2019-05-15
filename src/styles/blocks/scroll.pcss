@@ -1,32 +1,28 @@
 .scroll-down{
-    position: absolute;
-    margin-top: 60%;
+    /* position: absolute;
+    margin-top: 60%; */
+    z-index: 4;
+    margin-top: 20%;
     display: flex;
     align-content: center;
+    text-decoration: none;
+    .scroll{
+        fill: #fff;
+    }
     &:hover{
-        .scroll{
-            &:hover{
-                fill: $grey;
-            }
-            &:active{
-                fill: #ccc;
-            }
-        }
         color: $grey;
+        .scroll{
+            fill: $grey;
+        }
     }
     &:active{
         color: #ccc;
         .scroll{
-            &:hover{
-                fill: $grey;
-            }
-            &:active{
-                fill: #ccc;
+            fill: #ccc;
             }
         }
-    }
     cursor: pointer;
-}
-.scroll{
-    fill: #fff;
+    @include tablets{
+        display: none;
+    }
 }

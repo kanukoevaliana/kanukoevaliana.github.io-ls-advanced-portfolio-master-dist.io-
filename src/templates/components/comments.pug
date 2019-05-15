@@ -1,0 +1,43 @@
+script(type="text/x-template")#content
+    .container.comments__content
+        .slider_container
+            slider_title(
+                @slides="sliderComments"
+            )
+            slider
+
+script(type="text/x-template")#title
+    .comments__title
+        h2.comments__content-h2.section__title Что обо мне говорят
+        btns(
+            @slides="direction => $emit('slides', direction)"
+        )
+
+script(type="text/x-template")#btns
+    .comments__arrows
+        button.slider__arrow(type="submit" @click.prevent="$emit('slides','prev')")
+            +icon('arrow-down','arrow-left arrow__slider')
+        button.slider__arrow(type="submit" @click.prevent="$emit('slides','next')")
+            +icon('arrow-down','arrow-right arrow__slider')
+
+
+script(type="text/x-template")#comments__content
+    .comments__slider.slider
+        ul.slider__list
+            li.slider__items(v-for="slide in slider__info" :key="slide.text")
+                .items-container
+                    .quote
+                        +icon('quote','slider__quote')
+                    slider_items(
+                        :slide="slide"
+                    )
+
+script(type="text/x-template")#slider__items
+    .slider__content
+        .slider__text
+            p {{slide.text}}
+        .slider__person
+            img(:src="slide.image" alt="автор отзыва").photo.slider__image
+            .slider__info
+                .slider__name {{slide.name}}
+                .slider__acc {{slide.acc}}

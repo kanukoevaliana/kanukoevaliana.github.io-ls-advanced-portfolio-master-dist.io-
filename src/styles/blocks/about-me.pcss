@@ -1,21 +1,28 @@
 .about-me{
-    /* font-family: 'OpenSans-Bold'; */
-    top: -50px;
+    /* top: -50px; */
     height: 100%;
     width: 100%;
     position: relative;
+    z-index: 5;
 }
 .about{
     height: 100%;
-    z-index: 3;
+    z-index: 6;
     background: url(..//images/content/back_about.png);
     background-size: cover;
 }
 
 .about__content{
-    padding: 20% 0 20% 0;
+    padding: 15% 0 15% 0;
     display: flex;
     width: 75%;
     margin: 0 auto;
     line-height: 30px;
+    @include tablets{
+        width: 90%;
+    }
+    @include phones{
+        display: flex;
+        flex-direction: column;
+    }
 }

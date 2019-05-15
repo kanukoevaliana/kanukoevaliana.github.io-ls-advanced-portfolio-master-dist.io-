@@ -1,11 +1,12 @@
 .menu__list{
     display: flex;
-    &__item{
+    font-weight: normal;
+    .menu__item{
         margin-right: 60px;
         &:last-child{
             margin-right: 0;
         }
-        &--a{
+        .menu__link{
             text-decoration: none;
             &:hover{
                 color: $grey;
@@ -14,5 +15,10 @@
                 color: #ccc;
             }
         }
+    }
+    @include tablets{
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 50px;
     }
 }
